@@ -9,7 +9,7 @@ def test_purchase_flow():
     driver = webdriver.Chrome(service=service)
     
     try:
-        print("\n=== ТЕСТ НАЧИНАЕТСЯ ===\n")
+        print("\n ТЕСТ НАЧИНАЕТСЯ \n")
         
         # 1. Авторизация
         print("Шаг 1: Авторизация")
@@ -80,12 +80,10 @@ def test_purchase_flow():
         # Проверка результата
         confirmation = driver.find_element(By.CLASS_NAME, "complete-header").text
         assert "Thank you for your order" in confirmation
-        print("\n=== ТЕСТ УСПЕШНО ЗАВЕРШЕН ===\n")
+        print("\n ТЕСТ УСПЕШНО ЗАВЕРШЕН \n")
         
     except Exception as e:
-        print(f"\n=== ОШИБКА: {str(e)} ===")
-        driver.save_screenshot("error.png")
-        print("Скриншот ошибки сохранен как error.png")
+        print(f"\n ОШИБКА: {str(e)} ")
     finally:
         driver.quit()
         print("Браузер закрыт")
